@@ -1,17 +1,24 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+import Home from './Pages/Home.jsx';
 import './index.css'
-import { store } from './app/store'
-import { Provider } from 'react-redux'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './Components/Header.jsx';
+import Footer from './Components/Footer.jsx';
+import NotFound from './Pages/Notfound.jsx';
 
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-  
-  <Provider store={store}>
-    <App /> 
-  </Provider>
 
-  </React.StrictMode>,
-)
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <Router>
+    <main>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Footer/>
+    </main>
+  </Router>
+);
