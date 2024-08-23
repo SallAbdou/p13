@@ -1,0 +1,62 @@
+// import { useDispatch, useSelector } from 'react-redux';
+// import { setUser } from '../app/authSlice.js'; 
+// import { type } from 'os';
+// import Profile from './Profile';
+
+// const EditProfile = () => {
+//   const dispatch = useDispatch();
+//   const user = useSelector((state) => state.auth.user);
+//   const [firstName, setFirstName] = useState(user?.firstName || '');
+//   const [lastName, setLastName] = useState(user?.lastName || '');
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     try {
+//       const response = await fetch('http://localhost:3001/api/v1/user', {
+//         method: 'PUT',
+//         headers: {
+//           'Content-Type': 'application/json',
+//           'Authorization': `Bearer ${user.token}`, //à rajouter
+//         },
+//         body: JSON.stringify({ firstName, lastName }),
+//       });
+//       const updatedUser = await response.json();
+//       dispatch(setUser(updatedUser));
+//       alert('Profile updated successfully');
+//     } catch (error) {
+//       console.error('Failed to update profile', error);
+//     }
+//   };
+
+//   //a tester avec d'autres configs eslint 
+//   return (
+//     <div className="edit-profile">
+//       <h2>Edit Profile</h2>
+//       <form onSubmit={handleSubmit}>
+//         <div className="form-group">
+//           <label htmlFor="firstName">First Name:</label>
+//           <input
+//             type="text"
+//             id="firstName"
+//             value={firstName}
+//             onChange={(e) => setFirstName(e.target.value)}
+//             required
+//           />
+//         </div>
+//         <div className="form-group">
+//           <label htmlFor="lastName">Last Name:</label>
+//           <input
+//             type="text"
+//             id="lastName"
+//             value={lastName}
+//             onChange={(e) => setLastName(e.target.value)}
+//             required
+//           />
+//         </div>
+//         <button type="submit">Save</button>
+//       </form>
+//     </div>
+//   );
+// };
+
+// export default EditProfile;
